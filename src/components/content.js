@@ -23,11 +23,10 @@ function MainContainer() {
 
     return (
         <div>
-            {posts.map((data) => {
-                <h1>for eact {data.title}</h1>;
-            })}
-            <h2>IDont know whats happening</h2>
-            <h1>for getting data</h1>
+            {posts.map((data) => (
+                <Card title={data.title} />
+            ))}
+            <h1>main content</h1>
         </div>
     );
 }

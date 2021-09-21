@@ -3,8 +3,7 @@
 function SideBar() {
     return (
         <div>
-            <h1> this is side bars</h1>
-            <h2>this is second line</h2>
+            <h1>sidebar</h1>
         </div>
     );
 }
