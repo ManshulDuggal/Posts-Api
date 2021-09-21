@@ -14,15 +14,17 @@ function MainContainer() {
     useEffect(() => {
         Axios.get(Base).then((res) => {
             setPosts(res.data);
-            console.log(posts);
-            console.log(Base);
         });
-    });
+    }, []);
+
+    useEffect(() => {
+        console.log(posts);
+    }, [posts]);
 
     return (
         <div>
             {posts.map((data) => {
-                <Card title={data.title} />;
+                <h1>for eact {data.title}</h1>;
             })}
             <h2>IDont know whats happening</h2>
             <h1>for getting data</h1>
