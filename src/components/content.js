@@ -5,6 +5,7 @@ import Axios from "axios";
 import { Base } from "../api/api";
 import { useState } from "react/cjs/react.development";
 import Card from "./card";
+import styled from "styled-components";
 
 //useeffect
 //send props back to card
@@ -14,6 +15,7 @@ function MainContainer() {
     useEffect(() => {
         Axios.get(Base).then((res) => {
             setPosts(res.data);
+            console.log(res);
         });
     }, []);
 
@@ -22,12 +24,15 @@ function MainContainer() {
     }, [posts]);
 
     return (
-        <div>
-            {posts.map((data) => (
-                <Card title={data.title} />
+        <Content>
+            {posts.slice(0, 5).map((data) => (
+                <Card title={data.title} body={data.body} key={data.id} />
             ))}
-            <h1>main content</h1>
-        </div>
+        </Content>
     );
 }
+
+const Content = styled.div`
+    background-color: hsl(205, 35.29%, 93.33%);
+`;
 export default MainContainer;
