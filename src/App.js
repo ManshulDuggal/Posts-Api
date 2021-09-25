@@ -3,15 +3,27 @@ import SideBar from "./components/sidebar";
 import MainContainer from "./components/content";
 import Card from "./components/card";
 import GlobalStyles from "./components/GlobalStyles";
-
+import { useState } from "react";
 function App() {
-    // const [Posts, setPosts] = useState(false);
-
+    // states
+    //false = row format else its grids
+    const [layout, setLayout] = useState(false);
+    const ToggleViewRows = () => {
+        setLayout(false);
+        console.log(layout);
+    };
+    const ToggleViewGrids = () => {
+        setLayout();
+        console.log(true);
+    };
     return (
         <>
             <GlobalStyles />
             <Container>
-                <SideBar />
+                <SideBar
+                    ToggleViewRows={ToggleViewRows}
+                    ToggleViewGrids={ToggleViewGrids}
+                />
                 <MainContainer />
             </Container>
         </>

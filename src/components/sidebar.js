@@ -1,37 +1,44 @@
 import styled, { createGlobalStyle } from "styled-components";
 import Profile from "../images/profile.jpg";
+import React, { useState } from "react";
+import * as Icons from "react-icons/fa";
 
-function SideBar() {
+const SideBar = ({ ToggleViewRows, ToggleViewGrids }) => {
     return (
-        <>
-            <Container>
-                <Card>
-                    <div className="profile">
-                        <img src={Profile} alt="not found" />
-                    </div>
-                    <div className="heading">
-                        <h1>Hi reader,</h1>
-                        <p>Heres your news</p>
-                    </div>
-                </Card>
+        <Container>
+            <Card>
+                <div className="profile">
+                    <img src={Profile} alt="not found" />
+                </div>
+                <div className="heading">
+                    <h1>Hi reader,</h1>
+                    <p>Heres your news</p>
+                </div>
+            </Card>
 
-                <Toggle>
-                    <h1>View Toggle</h1>
-                    <div className="options">
-                        <button className="active-button"> Row</button>
-                        <button> column</button>
-                    </div>
-                </Toggle>
-                <Feedback>
-                    <h1>Have A Feedback?</h1>
-                    <div className="Frm-btn">
-                        <button> We're Listening!</button>
-                    </div>
-                </Feedback>
-            </Container>
-        </>
+            <Toggle>
+                <h1>View Toggle</h1>
+                <div className="options">
+                    <Icons.FaIndent
+                        onClick={ToggleViewRows}
+                        className="btn-icon-active"
+                    />
+
+                    <Icons.FaBars
+                        className="btn-icon"
+                        onClick={ToggleViewGrids}
+                    />
+                </div>
+            </Toggle>
+            <Feedback>
+                <h1>Have A Feedback?</h1>
+                <div className="Frm-btn">
+                    <button>We're Listening!</button>
+                </div>
+            </Feedback>
+        </Container>
     );
-}
+};
 
 const Container = styled.div`
     box-shadow: 1px 0px 20px 0.1px black inset;
@@ -68,11 +75,12 @@ const Toggle = styled.div`
     //toggle buttons
     .options {
         margin: 4rem 0rem;
+        padding: 1rem;
 
         button {
-            box-shadow: black 1px 1px 2px 0px inset;
+            /* box-shadow: black 1px 1px 2px 0px inset;
 
-            padding: 1.4rem;
+            padding: 1.4rem; */
         }
     }
 `;

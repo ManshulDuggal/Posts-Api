@@ -51,10 +51,7 @@ background-color: hsl(205, 35.29%, 93.33%);
     }
 
 
-    .active-button {
-            background-color: hsl(153.79,73.11%,76.67%);
-        }
-
+   
 
         .delete-icon{
           background-color: white;
@@ -64,6 +61,22 @@ background-color: hsl(205, 35.29%, 93.33%);
           padding: 1rem;
           box-shadow:black 0px 0px 20px;
         }
+
+.btn-icon{
+  font-size:3rem;
+ border-radius:1rem 0rem 1rem 0rem ;
+}
+.btn-icon-active{
+  border-radius:1rem 0rem 1rem 0rem ;
+  font-size:3rem;
+  background-color: hsl(153.79,73.11%,76.67%);
+;
+
+
+
+}
+
+
 }
 
 `;
