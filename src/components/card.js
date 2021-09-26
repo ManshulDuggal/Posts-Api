@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Load } from "../components/anim";
 import React from "react";
 import styled from "styled-components";
 import Profile from "../images/profile.jpg";
@@ -7,7 +8,7 @@ const Card = ({ title, body, id }) => {
     return (
         <>
             <Container>
-                <Wrapper>
+                <Wrapper variants={Load} initial="hidden" animate="visible">
                     <div className="profile">
                         <img src={Profile} alt="not found" />
                     </div>
@@ -25,7 +26,7 @@ const Card = ({ title, body, id }) => {
     );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
     margin: 2rem 0rem;
     padding: 1rem;
     border-radius: 1rem;
@@ -33,7 +34,7 @@ const Wrapper = styled.div`
     display: flex;
     color: black;
     box-shadow: black 1px 1px 30px;
-    width: 80%;
+    width: 100%;
 
     .profile {
         width: 5rem;
@@ -49,9 +50,10 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
+    width: 100%;
     padding: 1rem;
     display: flex;
-    justify-content: center;
+    margin: auto;
     align-items: center;
 `;
 

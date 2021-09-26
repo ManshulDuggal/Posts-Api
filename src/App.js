@@ -1,31 +1,34 @@
 import styled from "styled-components";
 import SideBar from "./components/sidebar";
 import MainContainer from "./components/content";
-import Card from "./components/card";
+import MainContainerGrids from "./components/contentGrids";
 import GlobalStyles from "./components/GlobalStyles";
-import { useState } from "react";
+
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    useHistory,
+    useLocation,
+    useParams,
+} from "react-router-dom";
+
 function App() {
-    // states
-    //false = row format else its grids
-    const [layout, setLayout] = useState(false);
-    const ToggleViewRows = () => {
-        setLayout(false);
-        console.log(layout);
-    };
-    const ToggleViewGrids = () => {
-        setLayout();
-        console.log(true);
-    };
     return (
         <>
-            <GlobalStyles />
-            <Container>
-                <SideBar
-                    ToggleViewRows={ToggleViewRows}
-                    ToggleViewGrids={ToggleViewGrids}
-                />
-                <MainContainer />
-            </Container>
+            <Router>
+                <GlobalStyles />
+                <Container>
+                    <SideBar />
+                    <Route path="/Gridview" exact>
+                        <MainContainerGrids />
+                    </Route>
+                    <Route path="/" exact>
+                        <MainContainer />
+                    </Route>
+                </Container>
+            </Router>
         </>
     );
 }
@@ -38,3 +41,15 @@ const Container = styled.div`
 `;
 
 export default App;
+
+// states
+//false = row format else its grids
+// const [layout, setLayout] = useState(false);
+// const ToggleViewRows = () => {
+//     setLayout(false);
+//     console.log(layout);
+// };
+// const ToggleViewGrids = () => {
+//     setLayout();
+//     console.log(true);
+// };

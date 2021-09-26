@@ -2,8 +2,13 @@ import styled, { createGlobalStyle } from "styled-components";
 import Profile from "../images/profile.jpg";
 import React, { useState } from "react";
 import * as Icons from "react-icons/fa";
+import { useHistory, Route, Link } from "react-router-dom";
 
-const SideBar = ({ ToggleViewRows, ToggleViewGrids }) => {
+const SideBar = () => {
+    let history = useHistory();
+    const ToggleView = () => {
+        console.log(history);
+    };
     return (
         <Container>
             <Card>
@@ -19,15 +24,15 @@ const SideBar = ({ ToggleViewRows, ToggleViewGrids }) => {
             <Toggle>
                 <h1>View Toggle</h1>
                 <div className="options">
-                    <Icons.FaIndent
-                        onClick={ToggleViewRows}
-                        className="btn-icon-active"
-                    />
-
-                    <Icons.FaBars
-                        className="btn-icon"
-                        onClick={ToggleViewGrids}
-                    />
+                    <Link to="/GridView">
+                        <Icons.FaIndent
+                            className="btn-icon-active"
+                            onClick={ToggleView}
+                        />
+                    </Link>
+                    <Link to="/">
+                        <Icons.FaBars className="btn-icon" />
+                    </Link>
                 </div>
             </Toggle>
             <Feedback>
@@ -44,13 +49,14 @@ const Container = styled.div`
     box-shadow: 1px 0px 20px 0.1px black inset;
 
     border-radius: 0rem 2rem 2rem 0rem;
-    width: 30%;
+    min-width: 25%;
     padding: 3rem;
     background: hsl(205, 35.29%, 93.33%);
 `;
 
 const Card = styled.div`
     //content body
+
     padding: 0.7rem;
     display: flex;
     background-color: white;
@@ -74,6 +80,7 @@ const Toggle = styled.div`
 
     //toggle buttons
     .options {
+        cursor: pointer;
         margin: 4rem 0rem;
         padding: 1rem;
 

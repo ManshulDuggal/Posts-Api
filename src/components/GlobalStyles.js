@@ -42,11 +42,13 @@ background-color: hsl(205, 35.29%, 93.33%);
 
 //profile image
 .profile {
+
         overflow: hidden;
         img {
             width: 50px;
             height: 50px;
             border-radius: 50%;
+            background-color: white;
         }
     }
 
@@ -62,12 +64,14 @@ background-color: hsl(205, 35.29%, 93.33%);
           box-shadow:black 0px 0px 20px;
         }
 
+     
+
 .btn-icon{
   font-size:3rem;
  border-radius:1rem 0rem 1rem 0rem ;
 }
 .btn-icon-active{
-  border-radius:1rem 0rem 1rem 0rem ;
+  
   font-size:3rem;
   background-color: hsl(153.79,73.11%,76.67%);
 ;
@@ -75,6 +79,8 @@ background-color: hsl(205, 35.29%, 93.33%);
 
 
 }
+
+
 
 
 }

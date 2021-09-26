@@ -1,6 +1,6 @@
 import react, { useEffect } from "react";
 import Axios from "axios";
-
+import { motion } from "framer-motion";
 // import styled from "styled-components";
 import { Base } from "../api/api";
 import { useState } from "react/cjs/react.development";
