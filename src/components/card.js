@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 import Profile from "../images/profile.jpg";
 import Cross from "../images/cross.png";
-const Card = ({ title, body, id }) => {
+const Card = ({ title, body, id, removeCard }) => {
     return (
         <>
             <Container>
@@ -19,7 +19,12 @@ const Card = ({ title, body, id }) => {
                 </Wrapper>
                 <div className="delete">
                     {/* onclick remove the card */}
-                    <img src={Cross} alt="remove" className="delete-icon" />
+                    <img
+                        src={Cross}
+                        alt="remove"
+                        className="delete-icon"
+                        onClick={() => removeCard(id)}
+                    />
                 </div>
             </Container>
         </>
@@ -27,8 +32,8 @@ const Card = ({ title, body, id }) => {
 };
 
 const Wrapper = styled(motion.div)`
-    margin: 2rem 0rem;
-    padding: 1rem;
+    margin: 0.5rem 0rem;
+    padding: 2rem 1rem;
     border-radius: 1rem;
     background: white;
     display: flex;

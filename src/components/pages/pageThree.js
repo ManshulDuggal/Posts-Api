@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 // import styled from "styled-components";
 import { Base } from "../api/api";
 import { useState } from "react/cjs/react.development";
-import Card from "./card";
+import Card from "../card";
 import styled from "styled-components";
 
 //useeffect
 //send props back to card
-function MainContainer() {
+function MainContainerThree() {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -30,7 +30,7 @@ function MainContainer() {
     };
     return (
         <Content>
-            {posts.slice(0, 5).map((data) => (
+            {posts.slice(12, 15).map((data) => (
                 <Card
                     title={data.title}
                     body={data.body}
@@ -46,4 +46,4 @@ function MainContainer() {
 const Content = styled.div`
     background-color: hsl(205, 35.29%, 93.33%);
 `;
-export default MainContainer;
+export default MainContainerThree;

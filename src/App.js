@@ -3,7 +3,8 @@ import SideBar from "./components/sidebar";
 import MainContainer from "./components/content";
 import MainContainerGrids from "./components/contentGrids";
 import GlobalStyles from "./components/GlobalStyles";
-
+import Pages from "./components/pages";
+import MainContainerTwo from "./components/pages/pageTwo";
 import {
     BrowserRouter as Router,
     Switch,
@@ -21,11 +22,18 @@ function App() {
                 <GlobalStyles />
                 <Container>
                     <SideBar />
+
                     <Route path="/Gridview" exact>
                         <MainContainerGrids />
+                        <Pages />
                     </Route>
                     <Route path="/" exact>
                         <MainContainer />
+                        <Pages />
+                    </Route>
+                    <Route path="/2" exact>
+                        <MainContainerTwo />
+                        <Pages />
                     </Route>
                 </Container>
             </Router>

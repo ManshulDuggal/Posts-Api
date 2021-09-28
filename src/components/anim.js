@@ -13,3 +13,12 @@ export const Load = {
         opacity: 1,
     },
 };
+export const pageHover = {
+    transition: {
+        duration: 2,
+        ease: "easeOut",
+    },
+    whileHover: {
+        scale: 2,
+    },
+};
