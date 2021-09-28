@@ -62,6 +62,7 @@ background-color: hsl(205, 35.29%, 93.33%);
           margin:0rem 2rem; 
           padding: 1rem;
           box-shadow:black 0px 0px 20px;
+          cursor: pointer;
         }
 
      
@@ -80,7 +81,10 @@ background-color: hsl(205, 35.29%, 93.33%);
 
 }
 
-
+.fa-globe{
+box-shadow: black 1rem 1rem 1rem 1rem;
+  
+}
 
 
 }
